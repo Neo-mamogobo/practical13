@@ -1,8 +1,7 @@
 public class chainedH {
 
-    static class Node{
-        int data;
-        Node next;
+    static class Node {
+        int data;Node next;
         private int size;
         private Node[] table;
 
