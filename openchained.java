@@ -72,6 +72,9 @@ public class openchained {
             Node[] table;
             int size;
         }
+        private int hash(int item){
+            return item % size;
+        }
     }
 
 }
