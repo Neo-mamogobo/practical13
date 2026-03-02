@@ -1,19 +1,19 @@
 public class chainedH {
 
     static class Node {
-        int data;Node next;
-        private int size;
-        private Node[] table;
+        int data;
+        Node next;
 
         public Node(int data){
             this.data = data;
             this.next = null;
         }
-        static class ChainHash{
+        static class Hashtable{
             private Node[] table;
             private int size;
+
         }
-        public void ChainHash(int size){
+        public Hashtable(int size){
             this.size = size;
             table = new Node[size];
         }

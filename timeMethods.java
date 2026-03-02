@@ -24,13 +24,35 @@ public class timeMethods{
         for(repetition = 0; repetition < repetitions; repetition++) {
             start = System.nanoTime();
 
-
+            chainedH.Node.ChainHash ch = new chainedH.Node.ChainHash(30);
 
             finish = System.nanoTime();
 
             time = (double)(finish - start);
             runTime += time;
             runTime2 += (time*time); }
+
+        double aveRuntime = runTime/repetitions;
+        double stdDeviation =
+                Math.sqrt(runTime2 - repetitions*aveRuntime*aveRuntime)/(repetitions-1);
+
+        long startlp, finishlp;
+        double runTimelp = 0, runTime2lp = 0, timelp;
+        double totalTimelp = 0.0;
+        int p = N;
+        int repetitionlp, repetitionslp = 30;
+
+        runTimelp = 0;
+        for(repetitionlp = 0; repetitionlp < repetitionslp; repetitionlp++) {
+            startlp = System.nanoTime();
+
+            chainedH.Node.ChainHash ch = new chainedH.Node.ChainHash(30);
+
+            finishlp = System.nanoTime();
+
+            timelp = (double)(finishlp - startlp);
+            runTimelp += timelp;
+            runTime2lp += (time*time); }
 
         double aveRuntime = runTime/repetitions;
         double stdDeviation =
