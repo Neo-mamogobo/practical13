@@ -1,12 +1,11 @@
 public class openchained {
 
-
-    static class openhash{
+    static class OpenHash{
          static int[] table;
          static int size;
 
 
-         public openhash(int size){
+         public OpenHash(int size){
              this.size = size;
              table = new int[size];
 

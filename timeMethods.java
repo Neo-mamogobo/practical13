@@ -3,7 +3,7 @@
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-    public static int N =30;
+    public static int N =20000;
     public static void main(String[] args){
         int[] X = new int[N];
         for(int i = 0; i < X.length; i++){
@@ -24,7 +24,7 @@ public class timeMethods{
         for(repetition = 0; repetition < repetitions; repetition++) {
             start = System.nanoTime();
 
-            openchained rp = new openchained(30);
+            openchained.OpenHash rp = new openchained.OpenHash(30);
 
             finish = System.nanoTime();
 
