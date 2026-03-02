@@ -1,8 +1,8 @@
 public class openchained {
 
     static class openhash{
-         int[] table;
-         int size;
+         static int[] table;
+         static int size;
 
          public void openchained(int size){
              this.size = size;
@@ -12,7 +12,7 @@ public class openchained {
                  table[i] = -1;
              }
          }
-         private int hash(int key){
+         private static int hash(int key){
              return key %  size;
          }
          public void insect( int item){
@@ -23,7 +23,7 @@ public class openchained {
              }
              table[index] = item;
          }
-         public void delete(int item){
+         public static void delete(int item){
              int index = hash(item);
              int start = index;
 
@@ -32,7 +32,30 @@ public class openchained {
                      table[index] =-2;
                      return;
                  }
-                 if(table[index])
+                 if(table[index]==start){
+                     return;
+                 }
+                 index = (index + 1) % size;
+             }
+         }
+         public static boolean search (int item){
+            int index = hash(item);
+
+            while(table[index] != -1){
+                if(table[index] == item){
+                    return true;
+                }
+                index = (index + 1) % size;
+            }
+             return false;
+         }
+         public void lookup(){
+             for(int i = 0; i < size; i++){
+                 if(table[i] == -1){
+                     System.out.println(i);
+                 }else if(table[i]==-2){
+                     System.out.println(i);
+                 }else System.out.println(table[i]);
              }
          }
     }
