@@ -24,7 +24,7 @@ public class timeMethods{
         for(repetition = 0; repetition < repetitions; repetition++) {
             start = System.nanoTime();
 
-            chainedH.Node.ChainHash ch = new chainedH.Node.ChainHash(30);
+            openchained rp = new openchained(30);
 
             finish = System.nanoTime();
 
@@ -46,17 +46,17 @@ public class timeMethods{
         for(repetitionlp = 0; repetitionlp < repetitionslp; repetitionlp++) {
             startlp = System.nanoTime();
 
-            chainedH.Node.ChainHash ch = new chainedH.Node.ChainHash(30);
+            chainedH.Node.Hashtable ch = new chainedH.Node.Hashtable(30);
 
             finishlp = System.nanoTime();
 
             timelp = (double)(finishlp - startlp);
             runTimelp += timelp;
-            runTime2lp += (time*time); }
+            runTime2lp += (timelp*timelp); }
 
-        double aveRuntime = runTime/repetitions;
-        double stdDeviation =
-                Math.sqrt(runTime2 - repetitions*aveRuntime*aveRuntime)/(repetitions-1);
+        double aveRuntimelp = runTimelp/repetitionslp;
+        double stdDeviationlp =
+                Math.sqrt(runTime2lp - repetitionslp*aveRuntimelp*aveRuntimelp)/(repetitionslp-1);
 
         System.out.print("\n\n\fStatistics\n");
         System.out.println("________________________________________________");

@@ -3,6 +3,8 @@ public class chainedH {
     static class Node {
         int data;
         Node next;
+        private int size;
+        private Node[] table;
 
         public Node(int data){
             this.data = data;
@@ -12,10 +14,10 @@ public class chainedH {
             private Node[] table;
             private int size;
 
-        }
-        public Hashtable(int size){
-            this.size = size;
-            table = new Node[size];
+            public Hashtable(int size) {
+                this.size = size;
+                table = new Node[size];
+            }
         }
         private int hash(int item){
             return item % size;
