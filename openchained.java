@@ -60,21 +60,4 @@ public class openchained {
          }
     }
 
-    static class Node{
-        int data;
-        Node next;
-
-        public Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-        static class chainhash{
-            Node[] table;
-            int size;
-        }
-        private int hash(int item){
-            return item % size;
-        }
-    }
-
 }
